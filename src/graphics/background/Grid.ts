@@ -8,6 +8,10 @@ export interface GridStyle {
   opacity?: number;
 }
 
+export interface GridConfig {
+  showGrid: boolean;
+}
+
 export function grid({ color, spacing, opacity }: GridStyle): CanvasDrawable {
   return (ctx: CanvasRenderingContext2D) => {
     ctx.strokeStyle = color || DEFAULT_GRID_COLOR;

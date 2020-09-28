@@ -2,6 +2,7 @@ import React from 'react';
 import Pepper from './Pepper';
 import PepperStyle from './graphics/style/PepperStyle';
 import PepperConfig from './graphics/PepperConfig';
+import { initialSate } from './graphics/PepperState';
 
 const Schematic = () => {
   const style: PepperStyle = {
@@ -16,11 +17,14 @@ const Schematic = () => {
   };
 
   const config: PepperConfig = {
-    showGrid: true,
+    grid: {
+      showGrid: true,
+    },
   };
 
+  const state = initialSate();
   return (
-    <Pepper width={1300} height={1400} pepperStyle={style} pepperConfig={config} />
+    <Pepper width={1300} height={1400} pepperStyle={style} pepperConfig={config} pepperSate={state} />
   );
 };
 
